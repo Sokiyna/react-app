@@ -1,12 +1,38 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
+
 class HornedBeasts extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            votes: 0,
+        }
+    }
+
+    addAnimalVotes = () => {
+        this.setState({
+            votes: this.state.votes + 1,
+        })
+    }
 
     render() {
         return (
-            <div>
-                <h2>{this.props.title}</h2>
-                <p>{this.props.description}</p>
-                <img src={this.props.hornPic} alt={"impala"} />
+            <div class='gallery'>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.imgUrl} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>
+                            🐈 Number of pets: {this.state.votes}
+                        </Card.Text>
+                        <Card.Text>{this.props.description}</Card.Text>
+                    </Card.Body>
+                    <Button onClick={this.addAnimalVotes} variant="primary">Vote</Button>
+                </Card>
             </div>
         )
     }
