@@ -25,10 +25,13 @@ class App extends React.Component {
     });
   }
 
-  showHandle = (params) => {
+  showHandle = (params) =>{
     let outcome = dataArr.find(element => {
       if (element.title === params) {
         return element;
+      }
+      else{
+        return ''
       }
 
     });
