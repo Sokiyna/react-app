@@ -1,34 +1,45 @@
 import React from 'react';
 import HornedBeasts from './HornedBeasts';
-import arrImgs from './arrImgs.json';
+import dataArr from "./data.json";
+import CardColumns from 'react-bootstrap/CardColumns';
+
 
 
 
 class Main extends React.Component {
 
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: this.props.title,
-            imgUrl: this.props.image_url,
-            description: this.props.description,
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         title: this.props.title,
+    //         imgUrl: this.props.image_url,
+    //         description: this.props.description,
+
+
+    //     }
+    // }
+
+    // showImg
+
 
 
     render() {
+
         return (
-            <>
-                {arrImgs.map(items => {
+            <CardColumns>
+
+<>
+                {dataArr.map((items, index) => {
                     return (
                         <HornedBeasts
+                            key={index}
                             title={items.title}
-                            imgUrl={items.image_url}
-                            description={items.description}/>
+                            imageUrl={items.image_url}
+                            description={items.description}
+                            showHandle={this.props.showHandle} />
 
-
-                )
+                    )
                 }
 
                 )}
@@ -36,6 +47,8 @@ class Main extends React.Component {
 
 
             </>
+            </CardColumns>
+           
         )
     }
 }
