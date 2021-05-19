@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataArr: this.props.dataArr,
+      dataArr:dataArr,
       storedElelments: {},
       show: false,
 
@@ -41,14 +41,19 @@ class App extends React.Component {
     });
   }
 
+  filterAnimals=(filterData)=>{
+    this.setState({
+      dataArr:filterData,
+    });
+
+  }
 
 
-
-  render() {
+  render(){
     return (
       <div>
         <Header />
-        <Main dataArr={dataArr} showHandle={this.showHandle} />
+        <Main dataArr={this.state.dataArr} showHandle={this.showHandle} filterAnimals={this.filterAnimals} />
         <SelectedBeast show={this.state.show} handleEnd={this.handleEnd} element={this.state.storedElelments}/>
         <Footer />
 
@@ -56,5 +61,7 @@ class App extends React.Component {
     )
   }
 }
+
+
 
 export default App;
