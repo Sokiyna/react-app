@@ -1,47 +1,48 @@
 import React from 'react';
 import HornedBeasts from './HornedBeasts';
-import arrImgs from './arrImgs.json';
-import CardColumns from 'react-bootstrap/CardColumns';
+
 
 
 
 class Main extends React.Component {
 
+    
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         title: this.props.title,
+    //         imgUrl: this.props.image_url,
+    //         description: this.props.description,
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: this.props.title,
-            imgUrl: this.props.image_url,
-            description: this.props.description,
+
+    //     }
+    // }
+
+    // showImg
+
+    hornsFilter = (event) => {
+
+
+
+                if (item.horns == optionNum) {
+                    return item;
+                } else{return''}
+
+                
+                
+            })
+
+        } else{
+            arr=arrCopy;
         }
+        this.props.filterAnimals(arr);
     }
 
 
-    render() {
-        return (
-            <CardColumns>
-            <>
-                {arrImgs.map(items => {
-                    return (
-                        <HornedBeasts
-                            title={items.title}
-                            imgUrl={items.image_url}
-                            description={items.description}/>
+
+        render(){
 
 
-                )
-                }
-
-                )}
-
-
-
-            </>
-            </CardColumns>
-        )
     }
-}
 
-export default Main;
 

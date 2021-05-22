@@ -19,11 +19,15 @@ class HornedBeasts extends React.Component {
         })
     }
 
+    renderData = () =>{
+        this.props.showHandle(this.props.title);
+      }
+      
     render() {
         return (
             <div class='gallery'>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={this.props.imgUrl} />
+                    <Card.Img onClick={this.renderData} variant="top" src={this.props.imageUrl} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
