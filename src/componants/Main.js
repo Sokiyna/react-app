@@ -34,9 +34,6 @@ class Main extends React.Component {
                 }
 
                 )}
-
-
-
             </>
             </CardColumns>
         )
