@@ -1,6 +1,7 @@
 import React from 'react';
 import HornedBeasts from './HornedBeasts';
 import arrImgs from './arrImgs.json';
+import CardColumns from 'react-bootstrap/CardColumns';
 
 
 
@@ -19,6 +20,7 @@ class Main extends React.Component {
 
     render() {
         return (
+            <CardColumns>
             <>
                 {arrImgs.map(items => {
                     return (
@@ -36,8 +38,10 @@ class Main extends React.Component {
 
 
             </>
+            </CardColumns>
         )
     }
 }
 
 export default Main;
+
